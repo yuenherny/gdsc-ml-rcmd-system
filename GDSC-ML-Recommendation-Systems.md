@@ -1,7 +1,12 @@
 # Recommendation Systems
 
 ## Table of Content
+Introduction
 - [What are recommendations?](#what-are-recommendations)
+- [Why recommendations?](#why-recommendations)
+- [Terminologies](#terminologies)
+- [Recommendations System Overview](#recommendation-systems-overview)
+- [Short Quiz 1](#short-quiz-1)
 
 ## What are Recommendations?
 Recommendations are the suggestions served up based on other things the user (e.g. you) like.
@@ -36,7 +41,7 @@ A recommendation system consists of:
 
 ![Recommendation System Overview](assets/recommendation-systems-overview.svg)
 
-## Short Quiz
+## Short Quiz 1
 1. Why wouldn you use recommendations systems?
     - A. You want to direct users to sponsored items.
     - B. You think you have to sprinkle ML on everything.
@@ -47,7 +52,44 @@ A recommendation system consists of:
     - C. Candidate generation, scoring and re-ranking (Answer)
 
 ## Candidate Generation
+This is the first stage of recommendation: given a query, a set of relevant candidates are generated. Two common approaches are:
+1. Content-based Filtering: 
+    - Uses **similarity between items** to recommend items similar to what the user likes.
+2. Collaborative Filtering
+    - Uses **similarities between queries and items simultaneously** to provide recommendations.
+
+![Recommendation approaches](https://miro.medium.com/max/998/1*O_GU8xLVlFx8WweIzKNCNw.png)
+
+### Basic Concepts: Embedding Space and Similarity Measure
+Visit [here](http://projector.tensorflow.org/) for interactive tool to visualize embeddings and similarity measure.
+
+In short:
+1. Embedding space is is a low-dimensional space which captures some latent structure of item or query set.
+2. Similarity measure is a function that takes a pair of embeddings and returns a scalar measuring their similarity. Some common measures are:
+    - Cosine: Cosine of angle between two vectors
+    - Dot product: The cosine of angle multipled by product of norms
+    - Euclidean distance: Usual distance in Euclidean space
+
+**Comparing similarity measures**
+1. Dot product
+    - Sensitive to norm
+    - Larger norm, higher rank
+2. Cosine
+    - Sensitive to angle
+    - Smaller angle, higher rank
+3. Euclidean distance
+    - Sensitive to distance
+    - Smaller distance, higher rank
+
+## Short Quiz 2
+Consider the example in the figure below. The black vector illustrates the query embedding. The other three embedding vectors (Item A, Item B, Item C) represent candidate items. Depending on the similarity measure used, the ranking of the items can be different.
+
+![Short Quiz 2](https://developers.google.com/machine-learning/recommendation/images/Similarity.svg)
+
+Using the image, try to determine the item ranking using all three of the similarity measures: cosine, dot product, and Euclidean distance.
+
 ### Content-based Filtering
+
 ### Collaborative Filtering
 
 ## Retrieval
