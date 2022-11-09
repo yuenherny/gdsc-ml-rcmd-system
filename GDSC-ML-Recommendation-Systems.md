@@ -14,7 +14,7 @@ Recommendations are the suggestions served up based on other things the user (e.
 ## Why Recommendations?
 Recommendations allow users to get in touch with compelling content in large corpora, particularly items that the user might not have thought to search for their own.
 
-### Terminologies
+## Terminologies
 Few terminologies to know:
 1. Items
     - A.K.A documents
@@ -27,7 +27,7 @@ Few terminologies to know:
     - A.K.A mapping to vector space
     - A mapping from a discrete set (set of items) to an embedding space
 
-### Recommendation Systems Overview
+## Recommendation Systems Overview
 A recommendation system consists of:
 1. Candidate generation
     - Generates a smaller subset of candidates from large corpus
