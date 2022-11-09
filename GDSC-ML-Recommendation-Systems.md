@@ -1,12 +1,16 @@
 # Recommendation Systems
 
 ## Table of Content
-Introduction
+Introduction (10 min)
 - [What are recommendations?](#what-are-recommendations)
 - [Why recommendations?](#why-recommendations)
 - [Terminologies](#terminologies)
 - [Recommendations System Overview](#recommendation-systems-overview)
 - [Short Quiz 1](#short-quiz-1)
+
+Candidate Generationv (20 min)
+- [Basic Concepts](#basic-concepts-embedding-space-and-similarity-measure)
+- [Short Quiz 2](#short-quiz-2)
 
 ## What are Recommendations?
 Recommendations are the suggestions served up based on other things the user (e.g. you) like.
@@ -42,7 +46,7 @@ A recommendation system consists of:
 ![Recommendation System Overview](assets/recommendation-systems-overview.svg)
 
 ## Short Quiz 1
-1. Why wouldn you use recommendations systems?
+1. Why wouldn't you use recommendations systems?
     - A. You want to direct users to sponsored items.
     - B. You think you have to sprinkle ML on everything.
     - C. Having recommendation engine makes browsing content easier. (Answer)
