@@ -43,7 +43,7 @@ A recommendation system consists of:
     - Take into account additional constraints for final ranking
     - E.g. removing disliked items or boost fresher content
 
-![Recommendation System Overview](assets/recommendation-systems-overview.svg)
+![Recommendation System Overview](https://developers.google.com/machine-learning/recommendation/images/Process.svg)
 
 ## Short Quiz 1
 1. Why wouldn't you use recommendations systems?
