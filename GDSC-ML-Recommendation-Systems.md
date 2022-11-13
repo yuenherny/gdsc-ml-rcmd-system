@@ -90,11 +90,41 @@ Consider the example in the figure below. The black vector illustrates the query
 
 ![Short Quiz 2](https://developers.google.com/machine-learning/recommendation/images/Similarity.svg)
 
-Using the image, try to determine the item ranking using all three of the similarity measures: cosine, dot product, and Euclidean distance.
+Using the image, try to determine the item ranking using all three of the similarity measures: cosine, dot product, and Euclidean distance. **(Note: Instructor is recommended to demo the solution.)**
 
 ### Content-based Filtering
+Content-based filtering uses **item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback**.
+
+#### How does content-based filtering work?
+Let's use the apps in Google Play Store as a demo.  The following figure shows a feature matrix where each row represents an app (see **first 3 rows**) and each column represents a feature. To simplify, assume this feature matrix is binary i.e. `[0, 1, ..., 1]`: a non-zero value means the app has that feature - i.e. the first app has the **Education** and **Science R Us** features.
+
+![Apps in Google Play Store vs User](https://developers.google.com/machine-learning/recommendation/images/Matrix1.svg)
+
+You also represent the user in the same feature space (see **final row**). Some of the user-related features could be explicitly provided by the user.
+
+Your objective is that the model should recommend items relevant to this user:
+1. Pick a similarity metric (for example, dot product)
+2. Set up the system to score each candidate item according to this similarity metric
+
+**Note: Recommendations are specific to this user, as the model did not use any information about other users.**
+
+Based on the feature matrix above and using dot product $\sum_{n=1}^{d} x_i y_i$, and let user embedding as $x$ while app embedding as $y$ (binary vectors) - if the feature both appearing in $x$ and $y$, then `1 * 1 = 1`.
+**(Note: Instructor is recommended to demo the solution.)**
+
+#### The Good and the Bad
+| The Good | The Bad |
+| --- | --- |
+| Easily scalable | Recommendations limited to users' existing interests |
+| Can capture specific interests of users | Requires a lot of domain knowledge for feature engineering |
+
+## Short Quiz 3
+Calculate the dot product for each app in the preceding app problem. Which app should we recommend?
+- A. The casual app created by TimeWastr.
+- B. The educational app created by Science R Us. (Answer)
+- C. The health app created by Healthcare.
 
 ### Collaborative Filtering
+Collaborative filtering uses **similarities between users and items simultaneously to provide recommendations**.
 
 ## Retrieval
 
