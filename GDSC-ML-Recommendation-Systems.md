@@ -124,7 +124,46 @@ Calculate the dot product for each app in the preceding app problem. Which app s
 - C. The health app created by Healthcare.
 
 ### Collaborative Filtering
-Collaborative filtering uses **similarities between users and items simultaneously to provide recommendations**.
+Collaborative filtering uses **similarities between users and items simultaneously to provide recommendations**. Hence collaborative filtering can recommend an item to user A based on the interests of similar user B.
+
+![Collaborative filtering](https://miro.medium.com/max/720/1*QvhetbRjCr1vryTch_2HZQ.jpeg)
+
+From the figure above, notice that there are two types of collaborative filtering: user-based and item-based. Let's look at user-based first.
+
+With user-based collaborative filtering, the model is trying to do "given user A and user B have similar interests, the things that user A is interested should be relevant to user B":
+1. Let the following be the situation:
+    - The girl in red is interested in grape, strawberry, watermelon and orange.
+    - The girl in blue is only interested in strawberry.
+    - The boy in purple is interested in strawberry and watermelon. 
+2. The model thinks that the boy in purple is similar to girl in red, hence it recommends grape and orange to the boy.
+
+With item-based collaborative filtering, the model is trying to do "given item A and item B have similar characteristics, if someone likes item A then probably they like item B too":
+1. Let the following be the situation:
+    - The girl in red is interested in grape, watermelon and orange.
+    - The girl in blue is interested in grape and watermelon.
+    - The boy in purple is interested in watermelon.
+    - Grape and watermelon is similar in some ways.
+2. The model thinks that the boy in purple would like grape, given that grape and watermelon is similar in some ways.
+
+#### The Good and the Bad
+| The Good | The Bad |
+| --- | --- |
+| No domain knowledge necessary | Cannot handle fresh items during production |
+| Can help users discover new interests | Hard to include side features |
+
+## Short Quiz 4
+The model recommends a shopping app to a user because they recently installed a similar app. What kind of filtering is this an example of?
+- A. Collaborative filtering
+- B. Content-based filtering (Answer)
+
+### Recommendations using Deep Neural Networks
+Collaborative filtering learn embeddings via matrix factorization. This method is limited in terms of:
+1. Hard to include side features
+2. Popular items tend to be recommended for everyone
+
+DNN models can address these limitations of matrix factorization - easily incorporate query features and item features (due to the flexibility of the input layer of the network), which can help capture the specific interests of a user and improve the relevance of recommendations.
+
+For the sake of time, we will not touch DNNs further. You can find out further [here](https://developers.google.com/machine-learning/recommendation/dnn/softmax).
 
 ## Retrieval
 
