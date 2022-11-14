@@ -8,7 +8,7 @@ Introduction (10 min)
 - [Recommendations System Overview](#recommendation-systems-overview)
 - [Short Quiz 1](#short-quiz-1)
 
-Candidate Generation (20 min)
+Candidate Generation (25 min)
 - [Basic Concepts](#basic-concepts-embedding-space-and-similarity-measure)
 - [Short Quiz 2](#short-quiz-2)
 - [Content-based Filtering](#content-based-filtering)
