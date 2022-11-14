@@ -8,9 +8,14 @@ Introduction (10 min)
 - [Recommendations System Overview](#recommendation-systems-overview)
 - [Short Quiz 1](#short-quiz-1)
 
-Candidate Generationv (20 min)
+Candidate Generation (20 min)
 - [Basic Concepts](#basic-concepts-embedding-space-and-similarity-measure)
 - [Short Quiz 2](#short-quiz-2)
+- [Content-based Filtering](#content-based-filtering)
+- [Short Quiz 3](#short-quiz-3)
+- [Collaborative Filtering](#collaborative-filtering)
+- [Short Quiz 4](#short-quiz-4)
+- [Recommendations using DNNs](#recommendations-using-deep-neural-networks)
 
 ## What are Recommendations?
 Recommendations are the suggestions served up based on other things the user (e.g. you) like.
