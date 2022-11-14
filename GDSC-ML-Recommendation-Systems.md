@@ -17,6 +17,16 @@ Candidate Generation (20 min)
 - [Short Quiz 4](#short-quiz-4)
 - [Recommendations using DNNs](#recommendations-using-deep-neural-networks)
 
+Retrieval
+
+Scoring
+
+Reranking
+
+Key Takeaways
+
+Demo & Conclusion
+
 ## What are Recommendations?
 Recommendations are the suggestions served up based on other things the user (e.g. you) like.
 
@@ -178,6 +188,4 @@ For the sake of time, we will not touch DNNs further. You can find out further [
 
 ## Key Takeaways
 
-## Short Quiz
-
-## Demo
+## Demo & Conclusion
