@@ -8,7 +8,7 @@ Introduction (10 min)
 - [Recommendations System Overview](#recommendation-systems-overview)
 - [Short Quiz 1](#short-quiz-1)
 
-Candidate Generation (25 min)
+Candidate Generation (35 min)
 - [Basic Concepts](#basic-concepts-embedding-space-and-similarity-measure)
 - [Short Quiz 2](#short-quiz-2)
 - [Content-based Filtering](#content-based-filtering)
@@ -16,16 +16,18 @@ Candidate Generation (25 min)
 - [Collaborative Filtering](#collaborative-filtering)
 - [Short Quiz 4](#short-quiz-4)
 - [Recommendations using DNNs](#recommendations-using-deep-neural-networks)
+- [Retrieval](#retrieval)
 
-Retrieval
+Scoring (20 min)
+- [Objective Function](#objective-function-for-scoring)
+- [Positional Bias](#positional-bias-in-scoring)
 
-Scoring
+Reranking (20 min)
+- [Challenges](#challenges)
 
-Reranking
-
-Key Takeaways
-
-Demo & Conclusion
+Conclusion (20 min)
+- [Key Takeaways](#key-takeaways)
+- [Demo](#demo)
 
 ## What are Recommendations?
 Recommendations are the suggestions served up based on other things the user (e.g. you) like.
@@ -237,7 +239,7 @@ Re-ranking can improve the recommendations by considering additional criteria or
     - As a function of video age (promote fresher content)
     - As a function of video length (increase viewing time)
 
-Challenges:
+### Challenges
 1. **Freshness**: Aim to incorporate the latest usage information, e.g. current user history and the newest items
     - Warm-start and re-run training as often as possible
     - Create an "average" user to represent new users in matrix factorization models
