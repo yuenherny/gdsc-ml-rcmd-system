@@ -277,5 +277,11 @@ The key takeaways are:
     - Diversity of content
     - Fairness for users
 
-## Demo & Conclusion
+## Demo
+Please visit this [Streamlit app](https://share.streamlit.io/mnobeidat13/handm-recommender-system/main) for the recommendation system demo.
 
+At **Try** section (sidebar):
+1. *Find similar items* is an example of content-based filtering.
+2. *Customer recommendations* is an example of user-based collaborative filtering.
+
+**Have fun with it and share your findings!**
