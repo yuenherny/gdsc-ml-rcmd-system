@@ -181,6 +181,24 @@ DNN models can address these limitations of matrix factorization - easily incorp
 For the sake of time, we will not touch DNNs further. You can find out further [here](https://developers.google.com/machine-learning/recommendation/dnn/softmax).
 
 ## Retrieval
+After candidate generation (means that we have an embedding model), the system can do two (2) things at serve time:
+1. Matrix factorization - query embedding is known statically: Simply look up query embedding from embedding matrix
+2. DNN model - query embedding unknown: Simply compute query embedding at serve time (inference)
+
+Now that we have:
+1. Query embedding, $q$ - represented by blue circle below;
+2. Item embeddings, $V_j$ - represented by green circle below;
+
+then we can return top K items using similarity score $s(q, V_j)$.
+
+![Retrieval](https://developers.google.com/machine-learning/recommendation/images/2Dretrieval.svg)
+
+Process is the same for related-item recommendations.
+
+### Scaling Up
+To find nearest neighbours, the system can exhaustively score every potential candidate - but it can be very expensive for large corpora. Possible workarounds:
+1. Statically-known query: Offline exhaustive scoring -> precompute and store list of top candidates
+2. Unknown query: Approximate nearest neightbour method
 
 ## Scoring
 
