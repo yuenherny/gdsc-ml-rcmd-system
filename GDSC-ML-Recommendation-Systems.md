@@ -228,6 +228,30 @@ Items that appear lower on the screen are less likely to be clicked than items a
 2. Rank all candidates as if they are in the top position on the screen
 
 ## Re-ranking
+Re-ranking can improve the recommendations by considering additional criteria or constraints:
+1. Use filters to remove some candidates - i.e. removing click-baits:
+    - Training a separate model that detects whether a video is click-bait.
+    - Running this model on the candidate list.
+    - Removing the videos that the model classifies as click-bait.
+2. Transform the score returned by the ranker - i.e. modifying score:
+    - As a function of video age (promote fresher content)
+    - As a function of video length (increase viewing time)
+
+Challenges:
+1. Freshness: Aim to incorporate the latest usage information, e.g. current user history and the newest items
+    - Warm-start and re-run training as often as possible
+    - Create an "average" user to represent new users in matrix factorization models
+    - Use a DNN such as a softmax model or two-tower model
+    - Add document age as a feature
+2. Diversity: Lack of diversity can cause a bad or boring user experience
+    - Train multiple candidate generators using different sources
+    - Train multiple rankers using different objective functions
+    - Re-rank items based on genre or other metadata
+3. Fairness: Treat all users fairly and reduce unconscious bias in data
+    - Include diverse perspectives in design and development
+    - Train ML models on comprehensive data sets and add auxilliary data when certain groups are underrepresented
+    - Track metrics on each demographic to watch for biases
+    - Make separate models for underserved groups
 
 ## Key Takeaways
 
