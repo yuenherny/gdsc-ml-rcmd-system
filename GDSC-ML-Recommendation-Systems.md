@@ -218,9 +218,9 @@ Then,
 
 ### Objective Function for Scoring
 Choice of objective function can affect rankings and subsequently quality of recommendations:
-1. Maximize click rate - may recommend click-bait videos
-2. Maximuze watch time - may recommend very long videos
-3. Increase diversity and maximize watch time - may recommend short and engaging videos
+1. **Maximize click rate** - may recommend click-bait videos
+2. **Maximuze watch time** - may recommend very long videos
+3. **Increase diversity and maximize watch time** - may recommend short and engaging videos
 
 ### Positional Bias in Scoring
 Items that appear lower on the screen are less likely to be clicked than items appearing higher on the screen. Querying the model with all possible positions is too expensive and the system still might not find a consistent ranking across multiple ranking scores:
@@ -229,30 +229,53 @@ Items that appear lower on the screen are less likely to be clicked than items a
 
 ## Re-ranking
 Re-ranking can improve the recommendations by considering additional criteria or constraints:
-1. Use filters to remove some candidates - i.e. removing click-baits:
+1. **Use filters to remove some candidates** - i.e. removing click-baits:
     - Training a separate model that detects whether a video is click-bait.
     - Running this model on the candidate list.
     - Removing the videos that the model classifies as click-bait.
-2. Transform the score returned by the ranker - i.e. modifying score:
+2. **Transform the score returned by the ranker** - i.e. modifying score:
     - As a function of video age (promote fresher content)
     - As a function of video length (increase viewing time)
 
 Challenges:
-1. Freshness: Aim to incorporate the latest usage information, e.g. current user history and the newest items
+1. **Freshness**: Aim to incorporate the latest usage information, e.g. current user history and the newest items
     - Warm-start and re-run training as often as possible
     - Create an "average" user to represent new users in matrix factorization models
     - Use a DNN such as a softmax model or two-tower model
     - Add document age as a feature
-2. Diversity: Lack of diversity can cause a bad or boring user experience
+2. **Diversity**: Lack of diversity can cause a bad or boring user experience
     - Train multiple candidate generators using different sources
     - Train multiple rankers using different objective functions
     - Re-rank items based on genre or other metadata
-3. Fairness: Treat all users fairly and reduce unconscious bias in data
+3. **Fairness**: Treat all users fairly and reduce unconscious bias in data
     - Include diverse perspectives in design and development
     - Train ML models on comprehensive data sets and add auxilliary data when certain groups are underrepresented
     - Track metrics on each demographic to watch for biases
     - Make separate models for underserved groups
 
 ## Key Takeaways
+The key takeaways are:
+1. Recommendations are the suggestions served up based on other things the user (e.g. you) like and they allow users to get in touch with compelling content in large corpora, particularly items that the user might not have thought to search for their own.
+2. Recommendations can be performed via three (3) steps:
+    - Candidate generation
+    - Scoring
+    - Re-ranking
+3. Items and queries can be represented using embeddings.
+4. Candidate generation is performed via:
+    - Content-based filtering
+    - Collaborative filtering (user or item-based)
+    - Deep neural networks
+5. Scoring can be performed for:
+    - Maximizing click rate, but might promote click-baits
+    - Maximuzing watch time, but might promote long videos
+    - Both increase diversity and maximize watch time
+6. Re-ranking can be performed via:
+    - Filtering to remove candidates - i.e. click-baits
+    - Transformt the score - i.e. fresher content
+7. Challenges for a recommendation system:
+    - Freshness of model
+    - Diversity of content
+    - Fairness for users
 
 ## Demo & Conclusion
+
