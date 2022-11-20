@@ -180,7 +180,7 @@ DNN models can address these limitations of matrix factorization - easily incorp
 
 For the sake of time, we will not touch DNNs further. You can find out further [here](https://developers.google.com/machine-learning/recommendation/dnn/softmax).
 
-## Retrieval
+### Retrieval
 After candidate generation (means that we have an embedding model), the system can do two (2) things at serve time:
 1. Matrix factorization - query embedding is known statically: Simply look up query embedding from embedding matrix
 2. DNN model - query embedding unknown: Simply compute query embedding at serve time (inference)
@@ -201,6 +201,31 @@ To find nearest neighbours, the system can exhaustively score every potential ca
 2. Unknown query: Approximate nearest neightbour method
 
 ## Scoring
+Generated candidates can come from multiple candidate generators using different sources:
+- Related items
+- User features
+- Geographic info
+- Popular or trending items
+- Social graph (liked or recommended by friends)
+
+Then, 
+1. These sources are combined into a common pool of candidates, like:
+    - Get personalization info
+    - Get trending items in respective area
+2. Scored by single model and ranked according to score, like:
+    - Model predict the probability of user watching a video using query and video features
+    - Items ranked according to probability of watch
+
+### Objective Function for Scoring
+Choice of objective function can affect rankings and subsequently quality of recommendations:
+1. Maximize click rate - may recommend click-bait videos
+2. Maximuze watch time - may recommend very long videos
+3. Increase diversity and maximize watch time - may recommend short and engaging videos
+
+### Positional Bias in Scoring
+Items that appear lower on the screen are less likely to be clicked than items appearing higher on the screen. Querying the model with all possible positions is too expensive and the system still might not find a consistent ranking across multiple ranking scores:
+1. Create position-independent rankings
+2. Rank all candidates as if they are in the top position on the screen
 
 ## Re-ranking
 
